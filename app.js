@@ -24,4 +24,13 @@ function listarAmigos(){
     lista.innerHTML = nomesHtml;
 }
 
+function sortearAmigo(){
+    if (listaDeNomes.length == 0) {
+        alert('Adicione amigos a serem sorteados')
+    }
+    let indexSorteado = Math.floor(Math.random()*listaDeNomes.length)
+    let nomeSorteado = document.getElementById('resultado');
+    nomeSorteado.innerHTML = listaDeNomes[indexSorteado];
+}
+
 
