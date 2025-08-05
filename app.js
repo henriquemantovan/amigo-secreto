@@ -2,14 +2,20 @@
 
 let listaDeNomes = [];
 
+function exibirTextoNaTela(tag, texto) {
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto;
+}
+
 function adicionarAmigo(){
     let nome = document.getElementById('amigo');
     if (nome.value == '') {
-        alert('Por favor, insira um nome.');
+        exibirTextoNaTela('h2','Por favor, insira um nome.')
     } else if (listaDeNomes.includes(nome.value)){
-        alert('Esse nome já está na lista');
+        exibirTextoNaTela('h2','Esse nome já está na lista. Mude o nome')
     } else {
         listaDeNomes.push(nome.value);
+        exibirTextoNaTela('h2','Digite o nome dos seus amigos')    
     }
     nome.value = '';
     listarAmigos();
@@ -26,11 +32,12 @@ function listarAmigos(){
 
 function sortearAmigo(){
     if (listaDeNomes.length == 0) {
-        alert('Adicione amigos a serem sorteados')
+        exibirTextoNaTela('h2','Adicione amigos a serem sorteados')
     }
-    let indexSorteado = Math.floor(Math.random()*listaDeNomes.length)
+    else {let indexSorteado = Math.floor(Math.random()*listaDeNomes.length)
     let nomeSorteado = document.getElementById('resultado');
     nomeSorteado.innerHTML = listaDeNomes[indexSorteado];
+    }
 }
 
 
