@@ -15,4 +15,13 @@ function adicionarAmigo(){
     listarAmigos();
 }
 
+function listarAmigos(){
+    let lista = document.getElementById('listaAmigos');
+    let nomesHtml = ''
+    for (let i=0; i<listaDeNomes.length; i++){
+        nomesHtml += `<li>${listaDeNomes[i]}</li>`;
+    }
+    lista.innerHTML = nomesHtml;
+}
+
 
